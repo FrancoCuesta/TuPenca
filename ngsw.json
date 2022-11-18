@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1668730248487,
-  "index": "https://francocuesta.github.io/TuPenca/index.html",
+  "timestamp": 1668730930539,
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://francocuesta.github.io/TuPenca/favicon.ico",
-        "https://francocuesta.github.io/TuPenca/index.html",
-        "https://francocuesta.github.io/TuPenca/main.df035c26065a2e1f.js",
-        "https://francocuesta.github.io/TuPenca/manifest.webmanifest",
-        "https://francocuesta.github.io/TuPenca/polyfills.790693ef969e6236.js",
-        "https://francocuesta.github.io/TuPenca/runtime.e88cb2626c960cf7.js",
-        "https://francocuesta.github.io/TuPenca/styles.ef46db3751d8e999.css"
+        "/favicon.ico",
+        "/index.html",
+        "/main.7b67bedb7ae1db0f.js",
+        "/manifest.webmanifest",
+        "/polyfills.790693ef969e6236.js",
+        "/runtime.e88cb2626c960cf7.js",
+        "/styles.ef46db3751d8e999.css"
       ],
       "patterns": []
     },
@@ -29,35 +29,35 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-128x128.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-144x144.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-152x152.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-192x192.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-384x384.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-512x512.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-72x72.png",
-        "https://francocuesta.github.io/TuPenca/assets/icons/icon-96x96.png"
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://francocuesta.github.io/TuPenca/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "https://francocuesta.github.io/TuPenca/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://francocuesta.github.io/TuPenca/index.html": "133533b6fc4c994da87da7b3ed8b5779ef6abf22",
-    "https://francocuesta.github.io/TuPenca/main.df035c26065a2e1f.js": "0db9334ef7813cde9e8174111abf983e34b4c166",
-    "https://francocuesta.github.io/TuPenca/manifest.webmanifest": "945d6f7660ef762f607b3d39c6020d253c643e9d",
-    "https://francocuesta.github.io/TuPenca/polyfills.790693ef969e6236.js": "cad396e733736c9739350b67779b40aec54ff8c3",
-    "https://francocuesta.github.io/TuPenca/runtime.e88cb2626c960cf7.js": "0de1d81db832d7eda00a76b4c98d22fe671b9f26",
-    "https://francocuesta.github.io/TuPenca/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "/assets/icons/icon-128x128.png": "7b60a73807690d23ece27ac2e55708afcb7c15d1",
+    "/assets/icons/icon-144x144.png": "260780e4804cc2941adfbea7be05aa0b75b8618b",
+    "/assets/icons/icon-152x152.png": "5fbb09b7c30515c9074caef2ce8babf91b890f19",
+    "/assets/icons/icon-192x192.png": "a69ea56b1e3c9e153b0f4d576288aa806bc88392",
+    "/assets/icons/icon-384x384.png": "9b8480c78a47488921e9f03470d55e06bcedb54b",
+    "/assets/icons/icon-512x512.png": "982a2156513b6e96c62c3a012732bac8a7b0ff2e",
+    "/assets/icons/icon-72x72.png": "2d730a505dc34552737dfecad3a5930edbbf57ac",
+    "/assets/icons/icon-96x96.png": "5173bbd0ac3bc2efdb3a94c1639a5d86a2a50a7b",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "6eb4343bb1e563adf04ab90d04b70f1e2ec01ce2",
+    "/main.7b67bedb7ae1db0f.js": "236007d94741c5a5466b8b6d2150e07d227e36dd",
+    "/manifest.webmanifest": "945d6f7660ef762f607b3d39c6020d253c643e9d",
+    "/polyfills.790693ef969e6236.js": "cad396e733736c9739350b67779b40aec54ff8c3",
+    "/runtime.e88cb2626c960cf7.js": "0de1d81db832d7eda00a76b4c98d22fe671b9f26",
+    "/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
   },
   "navigationUrls": [
     {
