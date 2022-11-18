@@ -1,0 +1,129 @@
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@import "~@angular/material/theming";
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+//GAMA DE COLORES
+$my-primary-color: (
+  50 : #e2f4fb,
+  100 : #b6e3f5,
+  200 : #85d0ee,
+  300 : #54bde7,
+  400 : #2fafe2,
+  500 : #0aa1dd,
+  600 : #0999d9,
+  700 : #078fd4,
+  800 : #0585cf,
+  900 : #0374c7,
+  A100 : #eff7ff,
+  A200 : #bcdfff,
+  A400 : #89c7ff,
+  A700 : #6fbbff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+)
+);
+
+$my-accent-color: (
+  50 : #fcfeff,
+  100 : #f8fdfe,
+  200 : #f4fcfe,
+  300 : #effbfe,
+  400 : #ebfafd,
+  500 : #e8f9fd,
+  600 : #e5f8fd,
+  700 : #e2f7fc,
+  800 : #def6fc,
+  900 : #d8f5fc,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #ffffff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  ));
+
+
+$my-warn-color: (
+  50 : #e4ebf9,
+  100 : #bcccf0,
+  200 : #90aae6,
+  300 : #6488dc,
+  400 : #426fd5,
+  500 : #2155cd,
+  600 : #1d4ec8,
+  700 : #1844c1,
+  800 : #143bba,
+  900 : #0b2aae,
+  A100 : #dbe1ff,
+  A200 : #a8b5ff,
+  A400 : #758aff,
+  A700 : #5c74ff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #ffffff,
+  )
+);
+
+//PALTEA DE COLORES
+$my-palette-primary: mat-palette($my-primary-color);
+$my-palette-accent: mat-palette($my-accent-color);
+$my-palette-warn: mat-palette($my-warn-color);
+
+//TEMA PROPIO
+$my-theme: mat-light-theme((
+  color: (
+    primary: $my-palette-primary,
+    accent: $my-palette-accent,
+    warn: $my-palette-warn
+  )
+));
+
+//APLICAR EL TEMA A ANGULAR
+@include angular-material-theme($my-theme);
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
