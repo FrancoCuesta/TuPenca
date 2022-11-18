@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1668807879476,
+  "timestamp": 1668808218244,
   "index": "https://francocuesta.github.io/TuPenca/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://francocuesta.github.io/TuPenca/favicon.ico",
         "https://francocuesta.github.io/TuPenca/index.html",
-        "https://francocuesta.github.io/TuPenca/main.e4d33db817b01398.js",
+        "https://francocuesta.github.io/TuPenca/main.ee0fabaa70c9391c.js",
         "https://francocuesta.github.io/TuPenca/manifest.webmanifest",
         "https://francocuesta.github.io/TuPenca/polyfills.790693ef969e6236.js",
         "https://francocuesta.github.io/TuPenca/runtime.e88cb2626c960cf7.js",
@@ -53,8 +53,8 @@
     "https://francocuesta.github.io/TuPenca/assets/icons/icon-72x72.png": "2d730a505dc34552737dfecad3a5930edbbf57ac",
     "https://francocuesta.github.io/TuPenca/assets/icons/icon-96x96.png": "5173bbd0ac3bc2efdb3a94c1639a5d86a2a50a7b",
     "https://francocuesta.github.io/TuPenca/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://francocuesta.github.io/TuPenca/index.html": "ec3f342fa177e30aad246f3321a4345fb22a74b1",
-    "https://francocuesta.github.io/TuPenca/main.e4d33db817b01398.js": "cb51150f5ffe51231fbefa5a546078039fd45aac",
+    "https://francocuesta.github.io/TuPenca/index.html": "6cb8423bca5e4575481f19dd6c0486dccf710ca3",
+    "https://francocuesta.github.io/TuPenca/main.ee0fabaa70c9391c.js": "4df90ffa48e784f1be22508ad0bab8cf32fe9221",
     "https://francocuesta.github.io/TuPenca/manifest.webmanifest": "945d6f7660ef762f607b3d39c6020d253c643e9d",
     "https://francocuesta.github.io/TuPenca/polyfills.790693ef969e6236.js": "cad396e733736c9739350b67779b40aec54ff8c3",
     "https://francocuesta.github.io/TuPenca/runtime.e88cb2626c960cf7.js": "0de1d81db832d7eda00a76b4c98d22fe671b9f26",
