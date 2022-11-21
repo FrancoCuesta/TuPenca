@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Penca } from 'src/app/models/penca';
-import { PencaService } from 'src/app/services/penca.service';
+import { PencaService } from 'src/app/services/penca/penca.service';
 
 @Component({
   selector: 'app-listarpublicas',

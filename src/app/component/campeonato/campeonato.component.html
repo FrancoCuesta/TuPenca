@@ -1,1 +1,30 @@
 <app-inicioadmin></app-inicioadmin>
+
+<br>
+<div class="d-flex justify-content-center">
+  <!-- Pills content -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <form [formGroup]="formCampeonato" (submit)="campeonato()">
+          <div class="form-outline mb-4">
+            <label class="form-label" for="nombre" formControlName="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control" />
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="descripcion" formControlName="descripcion">Descripcion</label>
+            <input type="text" id="descripcion" class="form-control" />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="fechaInicio" formControlName="fechaInicio">Fecha Inicio</label>
+            <input type="text" id="fechaInicio" class="form-control" />
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="fechaFin" formControlName="fechaFin">Fecha Fin</label>
+            <input type="text" id="fechaFin" class="form-control" />
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">Agregar Penca</button>
+        </form>
+      </div>

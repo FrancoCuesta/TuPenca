@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Penca } from '../models/penca';
+import { Penca } from '../../models/penca';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
