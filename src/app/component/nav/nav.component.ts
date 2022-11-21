@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/login';
 import { LoginService } from 'src/app/services/login.service';
@@ -8,8 +8,12 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent {token = localStorage.getItem('token');
-constructor( private api:LoginService ,private router:Router ) { }
+export class NavComponent implements OnInit{
+  token = localStorage.getItem('token');
+  constructor(private router:Router,private api:LoginService) { }
+
+  ngOnInit(): void {
+  }
 
   logout(){
     localStorage.clear();
@@ -23,6 +27,7 @@ constructor( private api:LoginService ,private router:Router ) { }
       console.log(data.token);
       localStorage.setItem('token', data.token);
       localStorage.setItem('token_expiration', data.expiration);
+      localStorage.setItem('idUsuario', data.idUsuario);
       location.reload();
     });
     this.router.navigate(['/']);

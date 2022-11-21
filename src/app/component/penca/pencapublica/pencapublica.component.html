@@ -1,1 +1,31 @@
-<p>pencapublica works!</p>
+<app-inicioadmin></app-inicioadmin>
+
+<br>
+<div class="d-flex justify-content-center">
+  <!-- Pills content -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <form [formGroup]="formPenca" (submit)="Penca()">
+          <div class="form-outline mb-4">
+            <label class="form-label" for="nombre" formControlName="nombre">Nombre</label>
+            <input type="text" id="nombre" class="form-control" />
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="costo_entrada" formControlName="costo_entrada">Costo de Entrada</label>
+            <input type="text" id="costo_entrada" class="form-control" />
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="comision" formControlName="comision">Comision</label>
+            <input type="text" id="comision" class="form-control" />
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="cant_participantes" formControlName="cant_participantes">Cantidad de Participantes</label>
+            <input type="text" id="cant_participantes" class="form-control" />
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">Agregar Penca</button>
+        </form>
+      </div>

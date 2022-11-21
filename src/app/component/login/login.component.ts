@@ -11,6 +11,8 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  nanv:NavComponent = new NavComponent (this.router,this.api);
+  token = localStorage.getItem('token');
 
   formlogin = new FormGroup({
     username: new FormControl('',Validators.required),
@@ -22,9 +24,10 @@ export class LoginComponent {
 
   login() {
       let x: Login={
-        password: this.formlogin.controls["password"].value,
-        username: this.formlogin.controls["username"].value
+        username: this.formlogin.value.username?this.formlogin.value.username:'',
+        password: this.formlogin.value.password?this.formlogin.value.password:''
       }
+      console.log(x);  
+      this.nanv.login(x);
     }
-    //this.nanv.login(x);
 }

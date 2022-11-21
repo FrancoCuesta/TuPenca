@@ -16,6 +16,10 @@ import { PencaprivadaComponent } from './component/penca/pencaprivada/pencapriva
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './component/nav/nav.component';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListarpublicasComponent } from './component/penca/listarpublicas/listarpublicas.component';
+import { ListarprivadasComponent } from './component/penca/listarprivadas/listarprivadas.component';
+
 
 @NgModule({
   declarations: [
@@ -29,21 +33,23 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms';
     CampeonatoComponent,
     PencapublicaComponent,
     PencaprivadaComponent,
-    NavComponent
+    NavComponent,
+    ListarpublicasComponent,
+    ListarprivadasComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
     BrowserAnimationsModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
