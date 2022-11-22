@@ -24,10 +24,9 @@ export class LoginComponent {
 
   login() {
       let x: Login={
-        username: this.formlogin.value.username?this.formlogin.value.username:'',
-        password: this.formlogin.value.password?this.formlogin.value.password:''
+        username: this.formlogin.controls["username"].value,
+        password: this.formlogin.controls["password"].value,
       }
-      console.log(x);  
       this.nanv.login(x);
     }
 }

@@ -2,9 +2,9 @@
   <!-- Pills content -->
     <div class="tab-content">
       <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-        <form>
+        <form (submit)="regusuario()">
 
-          <!-- Nobre -->
+          <!-- Nobre [formGroup]="formRegusuario" -->
           <div class="form-outline mb-4">
             <label class="form-label" for="loginNombre">Nombre</label>
             <input type="text" class="form-control" id="loginNombre" placeholder="Nombre">
@@ -29,11 +29,11 @@
           </div>
     
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-4">Registr</button>
+          <button type="submit" class="btn btn-primary btn-block mb-4">Registrar</button>
     
-          <!-- Register buttons -->
+          <!-- login buttons -->
           <div class="text-center">
-            <a>Login</a>
+            <!--a [routerLink]="'/login'">Ya tengo cuenta</a-->
           </div>
           
         </form>

@@ -19,6 +19,7 @@ import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListarpublicasComponent } from './component/penca/listarpublicas/listarpublicas.component';
 import { ListarprivadasComponent } from './component/penca/listarprivadas/listarprivadas.component';
+import { SpinnerComponent } from './component/spinner/spinner/spinner.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ListarprivadasComponent } from './component/penca/listarprivadas/listar
     NavComponent,
     ListarpublicasComponent,
     ListarprivadasComponent,
+    SpinnerComponent,
     
   ],
   imports: [

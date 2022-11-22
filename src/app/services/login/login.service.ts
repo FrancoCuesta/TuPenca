@@ -12,7 +12,10 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   url = 'https://localhost:7220/api/Auth/Login';
   Login(x:Login){
-    return this.http.post<returned>(this.url, {"username":x.username,"password":x.password})
+    let ret = this.http.post<returned>(this.url,x);
+    console.log(x);
+    console.log(ret);
+    return ret;
   } 
   
 }
