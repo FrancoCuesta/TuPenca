@@ -27,5 +27,6 @@ export class RegusuarioComponent {
         email: this.formRegusuario.controls["email"].value,
         password: this.formRegusuario.controls["password"].value,
       }
+      
     }
 }

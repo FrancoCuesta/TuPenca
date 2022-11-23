@@ -10,14 +10,19 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class NavComponent implements OnInit{
   token = localStorage.getItem('token');
-  constructor(private router:Router,private api:LoginService) { }
+  rol = localStorage.getItem('rol');
+  constructor(private router:Router,private api:LoginService) {
+   }
 
   ngOnInit(): void {
   }
 
   logout(){
+    console.log(this.rol);
+    console.log(this.token);
     localStorage.clear();
     this.token = localStorage.getItem('token');
+    console.log(this.rol);
     console.log(this.token);
     this.router.navigate(['/']);
   }
@@ -28,8 +33,12 @@ export class NavComponent implements OnInit{
       localStorage.setItem('token_expiration', data.expiration);
       this.api.user(data.email).subscribe(data => {
         console.log(data);
+        data.roles.forEach(element => {
+          console.log(element);
+          localStorage.setItem('rol', element);
+        });
+        location.reload();
       });
-      location.reload();
     });
     this.router.navigate(['/']);
   }

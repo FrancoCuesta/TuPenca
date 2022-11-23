@@ -19,7 +19,14 @@ export class LoginService {
     return ret;
   } 
   user(x:string){
-    let url = 'https://localhost:7220/api/Auth/GetUsuario';
+    let url = 'https://localhost:7220/api/Auth/GetUsuario?username='+x;
+    let ret = this.http.get<returned>(url);
+    console.log(x);
+    console.log(ret);
+    return ret;
+  }
+  register(x:Login){
+    let url = 'https://localhost:7220/api/Auth/Register';
     let ret = this.http.post<returned>(url,x);
     console.log(x);
     console.log(ret);
@@ -36,5 +43,6 @@ interface  returned{
   expirationMinutes: 0,
   nombre: string,
   email: string,
-  expiration: "2022-11-19T21:36:21.646Z"
+  expiration: string,
+  roles: string[]
 }

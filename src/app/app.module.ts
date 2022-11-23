@@ -16,10 +16,12 @@ import { PencaprivadaComponent } from './component/penca/pencaprivada/pencapriva
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './component/nav/nav.component';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ListarpublicasComponent } from './component/penca/listarpublicas/listarpublicas.component';
 import { ListarprivadasComponent } from './component/penca/listarprivadas/listarprivadas.component';
 import { SpinnerComponent } from './component/spinner/spinner/spinner.component';
+import { JwtInterceptor } from './interceptors/httpInterceptor';
+import { Spinerinterceptor } from './interceptors/spinerinterceptor';
 
 
 @NgModule({
@@ -53,7 +55,10 @@ import { SpinnerComponent } from './component/spinner/spinner/spinner.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: Spinerinterceptor ,multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

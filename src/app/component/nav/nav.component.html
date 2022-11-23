@@ -19,6 +19,9 @@
       </div>
     </div>
   </nav>
+<div *ngIf="rol == 'ADMIN' then thenBlock else elseBlock"></div>
+<ng-template #thenBlock> <app-inicioadmin></app-inicioadmin> </ng-template>
+<ng-template #elseBlock><app-iniciouser></app-iniciouser> </ng-template>
 </ng-template>
 <ng-template #elseBlock>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
