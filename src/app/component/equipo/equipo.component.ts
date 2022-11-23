@@ -16,8 +16,8 @@ export class EquipoComponent {
   equipo() {
       let x: Equipo = {
         id: 0,
-        nombre: this.formEquipo.value.nombre ? this.formEquipo.value.nombre : '',
-        imagen: this.formEquipo.value.imagen ? this.formEquipo.value.imagen : '',
+        nombre: this.formEquipo.controls["nombre"].value,
+        imagen: this.formEquipo.controls["imagen"].value,
       }
   }
 }

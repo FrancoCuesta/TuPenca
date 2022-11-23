@@ -20,10 +20,10 @@ export class PencapublicaComponent {
     {
       let x: Penca = {
         id: 0,
-        nombre: this.formPenca.value.nombre ? this.formPenca.value.nombre : '',
-        costo_entrada: this.formPenca.value.costo_entrada ? this.formPenca.value.costo_entrada : '',
-        comision: this.formPenca.value.comision ? this.formPenca.value.comision : '',
-        cant_participantes: this.formPenca.value.cant_participantes ? this.formPenca.value.cant_participantes : '',
+        nombre: this.formPenca.controls["nombre"].value,
+        costo_entrada: this.formPenca.controls["costo_entrada"].value,
+        comision: this.formPenca.controls["comision"].value,
+        cant_participantes: this.formPenca.controls["cant_participantes"].value, 
         priada: false,
         poso: '0',
         codigo: '0',

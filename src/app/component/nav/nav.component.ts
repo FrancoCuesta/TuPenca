@@ -24,10 +24,11 @@ export class NavComponent implements OnInit{
   
   public login(x:Login) {
     this.api.Login(x).subscribe(data => {
-      console.log(data.token);
       localStorage.setItem('token', data.token);
       localStorage.setItem('token_expiration', data.expiration);
-      localStorage.setItem('idUsuario', data.idUsuario);
+      this.api.user(data.email).subscribe(data => {
+        console.log(data);
+      });
       location.reload();
     });
     this.router.navigate(['/']);

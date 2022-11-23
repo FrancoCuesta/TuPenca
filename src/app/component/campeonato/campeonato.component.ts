@@ -19,10 +19,10 @@ export class CampeonatoComponent {
   campeonato() {
       let x: Campeonato = {
         id: "0",
-        nombre: this.formCampeonato.value.nombre ? this.formCampeonato.value.nombre : '',
-        descripcion: this.formCampeonato.value.descripcion ? this.formCampeonato.value.descripcion : '',
-        fechaInicio: this.formCampeonato.value.fechaInicio ? this.formCampeonato.value.fechaInicio : '',
-        fechaFin: this.formCampeonato.value.fechaFin ? this.formCampeonato.value.fechaFin : '',
+        nombre: this.formCampeonato.controls["nombre"].value,
+        descripcion: this.formCampeonato.controls["descripcion"].value,
+        fechaInicio: this.formCampeonato.controls["fechaInicio"].value,
+        fechaFin: this.formCampeonato.controls["fechaFin"].value,
         partidos: null
       }
     }

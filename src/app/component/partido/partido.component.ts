@@ -17,11 +17,11 @@ export class PartidoComponent {
   partido() {
     let x: Partido = {
       id: "0",
-      fecha: this.formPartido.value.fecha ? this.formPartido.value.fecha : '',
+      fecha: this.formPartido.controls["fecha"].value,
       golA: "0",
       golB:'0s',
-      idEquipoA: this.formPartido.value.idEquipoA ? this.formPartido.value.idEquipoA : '',
-      idEquipoB: this.formPartido.value.idEquipoB ? this.formPartido.value.idEquipoB : '',
+      idEquipoA: this.formPartido.controls["idEquipoA"].value,
+      idEquipoB: this.formPartido.controls["idEquipoB"].value,
       estado: false,
       resultado: "",
     }

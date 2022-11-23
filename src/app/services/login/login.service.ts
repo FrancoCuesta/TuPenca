@@ -10,13 +10,21 @@ import { from, Observable } from 'rxjs';
 export class LoginService {
 
   constructor(private http: HttpClient) { }
-  url = 'https://localhost:7220/api/Auth/Login';
+  
   Login(x:Login){
-    let ret = this.http.post<returned>(this.url,x);
+    let url = 'https://localhost:7220/api/Auth/Login';
+    let ret = this.http.post<returned>(url,x);
     console.log(x);
     console.log(ret);
     return ret;
   } 
+  user(x:string){
+    let url = 'https://localhost:7220/api/Auth/GetUsuario';
+    let ret = this.http.post<returned>(url,x);
+    console.log(x);
+    console.log(ret);
+    return ret;
+  }
   
 }
 
