@@ -8,12 +8,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PencaService {
   constructor(private http: HttpClient) { }
+
+  agregar(penca: Penca): Observable<Penca> {
+    let apiUrl = "https://localhost:7220/api/Penca";
+    return this.http.post<Penca>(apiUrl, penca);
+  }
+
   listarPublicas() : Observable<Penca[]>{
     let apiUrl = "https://localhost:7220/api/Penca/GetPencasPublica";
     return this.http.get<Penca[]>(apiUrl);
   }
 
-  listarPrivadas() : Observable<Penca[]>{
+  listarMisPenca() : Observable<Penca[]>{
     let apiUrl = "https://localhost:7220/api/Penca/GetPencasPrivada/"+localStorage.getItem('userId');
     return this.http.get<Penca[]>(apiUrl);
   }

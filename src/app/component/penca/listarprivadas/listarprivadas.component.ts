@@ -14,7 +14,7 @@ export class ListarprivadasComponent {
   constructor(private PencaService: PencaService,private router:Router) { }
 
   ngOnInit(): void {
-    this.PencaService.listarPrivadas().subscribe({
+    this.PencaService.listarMisPenca().subscribe({
       next: value => this.pencas = value,
       error: error => console.log(error)
   });}

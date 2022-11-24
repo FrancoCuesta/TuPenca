@@ -22,6 +22,13 @@ import { ListarprivadasComponent } from './component/penca/listarprivadas/listar
 import { SpinnerComponent } from './component/spinner/spinner/spinner.component';
 import { JwtInterceptor } from './interceptors/httpInterceptor';
 import { Spinerinterceptor } from './interceptors/spinerinterceptor';
+import { ListarPartidoComponent } from './component/partido/listar-partido/listar-partido.component';
+import { ListarCampeonatoComponent } from './component/campeonato/listar-campeonato/listar-campeonato.component';
+import { ListarEquiposComponent } from './component/equipo/listar-equipos/listar-equipos.component';
+import { MenuPartidoComponent } from './component/partido/menu-partido/menu-partido.component';
+import { MenuCampeonatoComponent } from './component/campeonato/menu-campeonato/menu-campeonato.component';
+import { MenuEquiposComponent } from './component/equipo/menu-equipos/menu-equipos.component';
+import { MenuPencaComponent } from './component/penca/menu-penca/menu-penca.component';
 
 
 @NgModule({
@@ -40,6 +47,13 @@ import { Spinerinterceptor } from './interceptors/spinerinterceptor';
     ListarpublicasComponent,
     ListarprivadasComponent,
     SpinnerComponent,
+    ListarPartidoComponent,
+    ListarCampeonatoComponent,
+    ListarEquiposComponent,
+    MenuPartidoComponent,
+    MenuCampeonatoComponent,
+    MenuEquiposComponent,
+    MenuPencaComponent,
     
   ],
   imports: [

@@ -7,22 +7,20 @@
       <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
         <form [formGroup]="formPartido" (submit)="partido()">
           <div class="form-outline mb-4">
-            <label class="form-label" for="nombre" formControlName="nombre">Nombre</label>
-            <input type="text" id="nombre" class="form-control" />
-          </div>
-          <!-- Password input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="descripcion" formControlName="descripcion">Descripcion</label>
-            <input type="text" id="descripcion" class="form-control" />
+            <label class="form-label" for="nombre" formControlName="nombre">Fecha</label>
+            <input type="datetime-local" id="nombre" class="form-control" [ngModel]="{date:'dd-MM-yyyy'}"/>
           </div>
           <div class="form-outline mb-4">
-            <label class="form-label" for="fechaInicio" formControlName="fechaInicio">Fecha Inicio</label>
-            <input type="text" id="fechaInicio" class="form-control" />
+            <label class="form-label" for="descripcion" formControlName="descripcion">Local</label>
+            <select class="form-select" aria-label="Default select example" formControlName="idEquipoA">
+              <option *ngFor="let e of equipo" value="{{e.id}}">{{e.nombre}}</option>
+            </select>
           </div>
-          <!-- Password input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="fechaFin" formControlName="fechaFin">Fecha Fin</label>
-            <input type="text" id="fechaFin" class="form-control" />
+            <label class="form-label" for="fechaInicio" formControlName="fechaInicio">Visitante</label>
+            <select class="form-select" aria-label="Default select example" formControlName="idEquipoB">
+              <option *ngFor="let e of equipo" value="{{e.id}}">{{e.nombre}}</option>
+            </select>
           </div>
           <!-- Submit button -->
           <button type="submit" class="btn btn-primary btn-block mb-4">Agregar partido</button>

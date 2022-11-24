@@ -6,22 +6,22 @@
       <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
         <form [formGroup]="formCampeonato" (submit)="campeonato()">
           <div class="form-outline mb-4">
-            <label class="form-label" for="nombre" formControlName="nombre">Nombre</label>
-            <input type="text" id="nombre" class="form-control" />
+            <label class="form-label" for="nombre" >Nombre</label>
+            <input type="text" id="nombre" class="form-control" formControlName="nombre" />
           </div>
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="descripcion" formControlName="descripcion">Descripcion</label>
-            <input type="text" id="descripcion" class="form-control" />
+            <label class="form-label" for="descripcion" >Descripcion</label>
+            <input type="text" id="descripcion" class="form-control" formControlName="descripcion" />
           </div>
           <div class="form-outline mb-4">
-            <label class="form-label" for="fechaInicio" formControlName="fechaInicio">Fecha Inicio</label>
-            <input type="text" id="fechaInicio" class="form-control" />
+            <label class="form-label" for="fechaInicio" >Fecha Inicio</label>
+            <input type="datetime-local" id="fechaInicio" class="form-control" formControlName="fechaInicio" />
           </div>
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="fechaFin" formControlName="fechaFin">Fecha Fin</label>
-            <input type="text" id="fechaFin" class="form-control" />
+            <label class="form-label" for="fechaFin" >Fecha Fin</label>
+            <input type="datetime-local" id="fechaFin" class="form-control" formControlName="fechaFin" />
           </div>
           <!-- Submit button -->
           <button type="submit" class="btn btn-primary btn-block mb-4">Agregar campeonato</button>
