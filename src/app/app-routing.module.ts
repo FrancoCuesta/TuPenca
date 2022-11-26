@@ -13,10 +13,11 @@ import { PencaprivadaComponent } from './component/penca/pencaprivada/pencapriva
 import { RegusuarioComponent } from './component/regusuario/regusuario.component';
 import { ListarpublicasComponent } from './component/penca/listarpublicas/listarpublicas.component';
 import { ListarprivadasComponent } from './component/penca/listarprivadas/listarprivadas.component';
+import { ListarCampeonatoComponent } from './component/campeonato/listar-campeonato/listar-campeonato.component';
+import { ListarPartidoComponent } from './component/partido/listar-partido/listar-partido.component';
 
 
 const routes: Routes = [
-  //{ path: 'usuario', component: GesUsuarioComponent },
   {path: 'login', component: LoginComponent},
   {path: '', component: InicioComponent},
   {path: 'admin', component: InicioadminComponent},
@@ -29,6 +30,9 @@ const routes: Routes = [
   {path: 'registrarusuario', component: RegusuarioComponent},
   {path: 'listarpublicas', component: ListarpublicasComponent},
   {path: 'listarprivadas', component: ListarprivadasComponent},
+  {path: 'listarcampeonato', component: ListarCampeonatoComponent},
+  {path: 'listarpartido', component: ListarPartidoComponent},
+  
 ];
 
 @NgModule({
