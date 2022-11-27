@@ -7,4 +7,5 @@ export interface Campeonato{
     fechaInicio: string|null,
     fechaFin: string|null,
     partidos: Partido[]
+    
 }

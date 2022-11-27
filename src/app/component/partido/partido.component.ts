@@ -32,13 +32,14 @@ export class PartidoComponent {
   partido() {
     let x: Partido = {
       id: "0",
+      nombre: "",
       fecha: this.formPartido.controls["fecha"].value,
-      golA: "0",
-      golB: '0s',
-      idEquipoA: this.formPartido.controls["idEquipoA"].value,
-      idEquipoB: this.formPartido.controls["idEquipoB"].value,
+      golA: '0',
+      golB: '0',
+      idEquipoA: Number(this.formPartido.controls["idEquipoA"].value),
+      idEquipoB: Number(this.formPartido.controls["idEquipoB"].value),
       estado: false,
-      resultado: "",
+      resultado: '0',
     }
     this.PartidoService.agregar(x).subscribe({
       next: value => { this.exito("Equipo creado con exito"); },

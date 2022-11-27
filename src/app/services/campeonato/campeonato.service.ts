@@ -20,4 +20,18 @@ export class CampeonatoService {
     return this.http.get<Campeonato[]>(apiUrl);
   }
 
+  get(id:string): Observable<Campeonato>{
+    let apiUrl = "https://localhost:7220/api/Campeonatos/"+id;
+    return this.http.get<Campeonato>(apiUrl);
+  }
+  
+  setPartido(idC:string|null, idP:string|null): Observable<Campeonato>{
+    let apiUrl = "https://localhost:7220/api/Campeonatos/SetPartido?idC="+idC+"&idP="+idP;
+    return this.http.put<Campeonato>(apiUrl,null);
+  }
+  
+  eliminarPartido(idC:string|null, idP:string|null): Observable<Campeonato>{
+    let apiUrl = "https://localhost:7220/api/Campeonatos/DeletePartido?idC="+idC+"&idP="+idP;
+    return this.http.put<Campeonato>(apiUrl,null);
+  }
 }

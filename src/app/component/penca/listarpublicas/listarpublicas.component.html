@@ -11,7 +11,7 @@
                         <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
                             <td class="tdbase1">Nombre</td>
                             <td class="tdbtn1">
-                                <button routerLink="/pencapublica" class="btn btn-secondary plus">+</button>
+                                <button routerLink="/pencapublica" class="btn btn-secondary plus" *ngIf="rol == 'ADMIN'">+</button>
                             </td>
                         </tr>
                     </thead>

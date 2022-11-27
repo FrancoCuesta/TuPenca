@@ -32,10 +32,9 @@ export class NavComponent implements OnInit{
       localStorage.setItem('token', data.token);
       localStorage.setItem('token_expiration', data.expiration);
       this.api.user(data.email).subscribe(data => {
-        console.log(data);
         data.roles.forEach(element => {
-          console.log(element);
           localStorage.setItem('rol', element);
+          localStorage.setItem('email', data.email);
         });
         location.reload();
       });

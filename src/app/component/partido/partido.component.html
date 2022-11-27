@@ -7,8 +7,8 @@
       <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
         <form [formGroup]="formPartido" (submit)="partido()">
           <div class="form-outline mb-4">
-            <label class="form-label" for="nombre" formControlName="nombre">Fecha</label>
-            <input type="datetime-local" id="nombre" class="form-control" [ngModel]="{date:'dd-MM-yyyy'}"/>
+            <label class="form-label" for="nombre">Fecha</label>
+            <input type="datetime-local" id="nombre" class="form-control" [ngModel]="{date:'dd-MM-yyyy'}" formControlName="fecha"/>
           </div>
           <div class="form-outline mb-4">
             <label class="form-label" for="descripcion" formControlName="descripcion">Local</label>

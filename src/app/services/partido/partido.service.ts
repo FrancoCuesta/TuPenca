@@ -12,7 +12,16 @@ export class PartidoService {
   
   agregar(x : Partido) : Observable<Partido[]>{ 
     let apiUrl = "https://localhost:7220/api/Partidos";
-    return this.http.post<Partido[]>(apiUrl,x);
+    return this.http.post<Partido[]>(apiUrl,{
+      nombre: '',
+      fecha: x.fecha,
+      golA: 0,
+      golB: 0,
+      idEquipoA: x.idEquipoA,
+      idEquipoB: x.idEquipoB,
+      estado: false,
+      resultado: 0
+    });
   }
   listar() : Observable<Partido[]>{
     let apiUrl= "https://localhost:7220/api/Partidos";

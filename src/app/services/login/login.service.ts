@@ -14,22 +14,16 @@ export class LoginService {
   Login(x:Login){
     let url = 'https://localhost:7220/api/Auth/Login';
     let ret = this.http.post<returned>(url,x);
-    console.log(x);
-    console.log(ret);
     return ret;
   } 
   user(x:string){
     let url = 'https://localhost:7220/api/Auth/GetUsuario?username='+x;
     let ret = this.http.get<returned>(url);
-    console.log(x);
-    console.log(ret);
     return ret;
   }
   register(x:Login){
     let url = 'https://localhost:7220/api/Auth/Register';
     let ret = this.http.post<returned>(url,x);
-    console.log(x);
-    console.log(ret);
     return ret;
   }
   

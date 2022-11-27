@@ -11,6 +11,7 @@ import { CampeonatoService } from 'src/app/services/campeonato/campeonato.servic
 export class ListarCampeonatoComponent {
   campeonatos: Campeonato[] = [];
   token = localStorage.getItem('token');
+  rol = localStorage.getItem('rol');
   constructor(private CampeonatoService: CampeonatoService ,private router:Router) { }
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class ListarCampeonatoComponent {
   
   VerCampeonato(id:string|null){
     if (id != null) {
-    this.router.navigate(['/Campeonato', id]);
+      this.router.navigate(['/Campeonato', id]);
   }
 }
 

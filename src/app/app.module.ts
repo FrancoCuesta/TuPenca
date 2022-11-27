@@ -26,9 +26,10 @@ import { ListarPartidoComponent } from './component/partido/listar-partido/lista
 import { ListarCampeonatoComponent } from './component/campeonato/listar-campeonato/listar-campeonato.component';
 import { ListarEquiposComponent } from './component/equipo/listar-equipos/listar-equipos.component';
 import { MenuPartidoComponent } from './component/partido/menu-partido/menu-partido.component';
-import { MenuCampeonatoComponent } from './component/campeonato/menu-campeonato/menu-campeonato.component';
 import { MenuEquiposComponent } from './component/equipo/menu-equipos/menu-equipos.component';
 import { MenuPencaComponent } from './component/penca/menu-penca/menu-penca.component';
+import { VerCampeonatoComponent } from './component/campeonato/ver-campeonato/ver-campeonato.component';
+import { VerPencaComponent } from './component/penca/ver-penca/ver-penca.component';
 
 
 @NgModule({
@@ -51,9 +52,10 @@ import { MenuPencaComponent } from './component/penca/menu-penca/menu-penca.comp
     ListarCampeonatoComponent,
     ListarEquiposComponent,
     MenuPartidoComponent,
-    MenuCampeonatoComponent,
     MenuEquiposComponent,
     MenuPencaComponent,
+    VerCampeonatoComponent,
+    VerPencaComponent,
     
   ],
   imports: [

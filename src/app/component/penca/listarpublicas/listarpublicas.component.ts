@@ -9,7 +9,7 @@ import { PencaService } from 'src/app/services/penca/penca.service';
   styleUrls: ['./listarpublicas.component.scss']
 })
 export class ListarpublicasComponent implements OnInit {
-  
+  rol= localStorage.getItem('rol');
   pencas: Penca[] = [];
   token = localStorage.getItem('token');
   constructor(private PencaService: PencaService,private router:Router) { }
@@ -21,6 +21,6 @@ export class ListarpublicasComponent implements OnInit {
   });}
   
   VerPenca(id:number){
-    this.router.navigate(['/penca', id]);
+    this.router.navigate(['/Penca', id]);
   }
 }
