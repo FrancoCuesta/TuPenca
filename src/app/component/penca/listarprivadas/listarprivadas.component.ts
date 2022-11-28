@@ -11,6 +11,7 @@ import { PencaService } from 'src/app/services/penca/penca.service';
 export class ListarprivadasComponent {
   pencas: Penca[] = [];
   token = localStorage.getItem('token');
+  rol = localStorage.getItem('rol');
   constructor(private PencaService: PencaService,private router:Router) { }
 
   ngOnInit(): void {
@@ -20,6 +21,6 @@ export class ListarprivadasComponent {
   });}
   
   VerPenca(id:number){
-    this.router.navigate(['/penca', id]);
+    this.router.navigate(['/Penca', id]);
   }
 }

@@ -15,7 +15,7 @@ export class VerPencaComponent {
   rol = localStorage.getItem('rol');
   penca!: Penca;
   campeonato: Campeonato[] = [];
-  unido = false;
+  unido!:boolean;
   constructor(private PencaService: PencaService, private CampeonatoService: CampeonatoService, private router: Router, private route: ActivatedRoute) { }
 
   VerCampeonato(id: string | null) {
@@ -26,17 +26,18 @@ export class VerPencaComponent {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.PencaService.get(params['id']).subscribe({
-        next: value =>this.penca = value,
+        next: value =>{this.penca = value,
+          this.PencaService.estasUnido(this.penca.id).subscribe({
+            next: value => this.unido = true,
+            error: error => this.unido = false
+          });
+        },
         error: error => console.log(error)
       });
       this.CampeonatoService.listar().subscribe({
         next: value => this.campeonato = value,
         error: error => console.log(error)
       });
-      this.PencaService.estasUnido(this.penca.id)/*.subscribe({
-        next: value => this.unido = value,
-        error: error => console.log(error)
-      });*/
     });
   }
   agregarCampeonato(id: string | null) {
@@ -52,7 +53,15 @@ export class VerPencaComponent {
       next: value => console.log(value),
       error: error => console.log(error)
     });
-    //location.reload();
+    location.reload();
+  }
+
+  Salir(){
+    this.PencaService.Salir(this.penca.id).subscribe({
+      next: value => console.log(value),
+      error: error => console.log(error)
+    });
+    location.reload();
   }
 
 }

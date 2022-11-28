@@ -13,7 +13,8 @@
     <p>Poso Acumulado: {{penca.poso}}</p>
     <p>Cantidad maxima de participantes: {{penca.cant_participantes}}</p>
     <button *ngIf="penca.campeonatoId !='0'" class="btn btn-secondary" style="margin: 5px;"(click)="VerCampeonato(penca.campeonatoId)">campeonato</button>
-    <button *ngIf="rol == 'USER'" class="btn btn-secondary" style="margin: 5px;"(click)="Unirme()">Unirme</button>
+    <button *ngIf="rol == 'USER' && unido == false " class="btn btn-secondary" style="margin: 5px;"(click)="Unirme()">Unirme</button>
+    <button *ngIf="rol == 'USER' && unido == true " class="btn btn-secondary" style="margin: 5px;"(click)="Salir()">Salir</button>
     <div *ngIf="rol == 'ADMIN' && penca.campeonatoId == '0'">
         <thead style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
             <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
