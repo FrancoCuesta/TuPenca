@@ -19,4 +19,10 @@ export class EquipoService {
     let apiUrl = "https://localhost:7220/api/Equipos";
     return this.http.get<Equipo[]>(apiUrl);
   }
+
+  get(id : number|null) : Observable<Equipo>{
+    let apiUrl = "https://localhost:7220/api/Equipos/"+id;
+    return this.http.get<Equipo>(apiUrl);
+  }
+
 }

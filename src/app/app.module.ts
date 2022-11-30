@@ -31,6 +31,7 @@ import { MenuPencaComponent } from './component/penca/menu-penca/menu-penca.comp
 import { VerCampeonatoComponent } from './component/campeonato/ver-campeonato/ver-campeonato.component';
 import { VerPencaComponent } from './component/penca/ver-penca/ver-penca.component';
 import { VerPremiosComponent } from './component/premios/ver-premios/ver-premios.component';
+import { PredicsionComponent } from './component/predicsion/predicsion.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { VerPremiosComponent } from './component/premios/ver-premios/ver-premios
     VerCampeonatoComponent,
     VerPencaComponent,
     VerPremiosComponent,
+    PredicsionComponent,
     
   ],
   imports: [

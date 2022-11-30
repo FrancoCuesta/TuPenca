@@ -20,7 +20,7 @@ export class CampeonatoService {
     return this.http.get<Campeonato[]>(apiUrl);
   }
 
-  get(id:string): Observable<Campeonato>{
+  get(id:string|null): Observable<Campeonato>{
     let apiUrl = "https://localhost:7220/api/Campeonatos/"+id;
     return this.http.get<Campeonato>(apiUrl);
   }

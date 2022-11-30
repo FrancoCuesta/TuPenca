@@ -17,6 +17,7 @@ import { ListarCampeonatoComponent } from './component/campeonato/listar-campeon
 import { ListarPartidoComponent } from './component/partido/listar-partido/listar-partido.component';
 import { VerCampeonatoComponent } from './component/campeonato/ver-campeonato/ver-campeonato.component';
 import { VerPencaComponent } from './component/penca/ver-penca/ver-penca.component';
+import { PredicsionComponent } from './component/predicsion/predicsion.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'listarpartido', component: ListarPartidoComponent},
   {path: 'Campeonato/:id', component: VerCampeonatoComponent},
   {path: 'Penca/:id', component: VerPencaComponent},
+  {path: 'Prediccion', component: PredicsionComponent},
 ];
 
 @NgModule({
