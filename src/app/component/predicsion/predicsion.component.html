@@ -1,18 +1,40 @@
-<div class="d-flex justify-content-center">
-    <div class="tab-content">
-        <div class="justify-content-center" style="margin-bottom: 20px;">
-            <form [formGroup]="formPredicsion" (submit)="Prediccion()">
-                <div class="form-outline mb-4 d-flex">
-                  <label class="form-label" for="nombre">{{equipoA.nombre}}</label>
-                  <input type="number" id="golA" class="form-control" formControlName="golA" />
-                </div>
-                <div class="form-outline mb-4 d-flex">
-                    <label class="form-label" for="nombre">{{equipoB.nombre}}</label>
-                    <input type="number" id="golB" class="form-control" formControlName="golB" />
-                  </div>
-                  
-                  <button type="submit" class="btn btn-primary btn-block mb-4">Prediccion</button>
-            </form>
+<div class="justify-center" *ngIf="rol == 'USER'">
+    <div class="d-flex justify-content-center">
+        <div class="tab-content">
+            <div class="justify-content-center" style="margin-bottom: 20px;">
+                <form [formGroup]="formPredicsion" (submit)="Prediccion()">
+                    <div class="form-outline mb-4 d-flex">
+                        <label class="form-label" for="nombre">{{equipoA.nombre}}</label>
+                        <input type="number" id="golA" class="form-control" formControlName="golA" />
+                    </div>
+                    <div class="form-outline mb-4 d-flex">
+                        <label class="form-label" for="nombre">{{equipoB.nombre}}</label>
+                        <input type="number" id="golB" class="form-control" formControlName="golB" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Prediccion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="justify-center" *ngIf="rol == 'ADMIN'">
+    <div class="d-flex justify-content-center">
+        <div class="tab-content">
+            <div class="justify-content-center" style="margin-bottom: 20px;">
+                <form [formGroup]="formPredicsion" (submit)="Resultado()">
+                    <div class="form-outline mb-4 d-flex">
+                        <label class="form-label" for="nombre">{{equipoA.nombre}}</label>
+                        <input type="number" id="golA" class="form-control" formControlName="golA" />
+                    </div>
+                    <div class="form-outline mb-4 d-flex">
+                        <label class="form-label" for="nombre">{{equipoB.nombre}}</label>
+                        <input type="number" id="golB" class="form-control" formControlName="golB" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Resultado</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -5,11 +5,13 @@
             <p>Costo de entrada: {{penca.costo_entrada}}</p>
             <p>Poso Acumulado: {{penca.poso}}</p>
             <p>Cantidad maxima de participantes: {{penca.cant_participantes}}</p>
-
-            <button *ngIf="rol == 'USER' && unido == false " class="btn btn-secondary" style="margin: 5px;"
-                (click)="Unirme()">Unirme</button>
-            <button *ngIf="rol == 'USER' && unido == true " class="btn btn-secondary" style="margin: 5px;"
-                (click)="Salir()">Salir</button>
+            <div *ngIf="rol == 'USER' && unido == false ">
+                <div #paypal></div>
+            <button class="btn btn-secondary" style="margin: 5px;"(click)="Unirme()">Unirme</button>
+            </div>
+            <div *ngIf="rol == 'USER' && unido == true ">
+            <button class="btn btn-secondary" style="margin: 5px;"(click)="Salir()">Salir</button>
+            </div>
             <br>
             <div *ngIf="penca.campeonatoId !='0'" class="btn btn-secondary" style="margin: 5px;"
                 (click)="VerCampeonato(penca.campeonatoId)">

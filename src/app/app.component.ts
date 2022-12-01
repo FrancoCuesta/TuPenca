@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef ,OnInit,ViewChild } from '@angular/core';
+
+declare var paypal:any;
 
 @Component({
   selector: 'app-root',
@@ -6,10 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  
+  @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
+  
   title = 'TuPenca';
 
   public ngOnInit(){
+    paypal.Buttons().render(this.paypalElement.nativeElement);
 
   }
 }

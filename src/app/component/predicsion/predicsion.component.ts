@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./predicsion.component.scss']
 })
 export class PredicsionComponent {
+  rol = localStorage.getItem('rol');
   prediccion!: Predicsion;
   partido!:Partido;
   equipoA!:Equipo;
@@ -55,6 +56,18 @@ export class PredicsionComponent {
       });
     }
   }
+
+  Resultado() {
+    {
+      this.partido.golA = this.formPredicsion.controls["golA"].value;
+      this.partido.golB = this.formPredicsion.controls["golB"].value;
+      this.PartidoService.SetResultado(this.partido).subscribe({
+        next: value => { this.exito("Resultado guardado con exito"); },
+        error: err => { this.error('Error al guardar el resultado: ') }
+      });
+    }
+  }
+
   error(x: string): void {
     Swal.fire({
       icon: 'error',

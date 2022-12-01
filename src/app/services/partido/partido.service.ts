@@ -44,4 +44,10 @@ export class PartidoService {
     let apiUrl= "https://localhost:7220/api/Partidos/"+id;
     return this.http.get<Partido>(apiUrl);
   }
+
+  SetResultado(x : Partido) : Observable<Partido>{
+    let apiUrl= "https://localhost:7220/api/Partidos";
+    return this.http.put<Partido>(apiUrl,x);
+  }
+
 }
