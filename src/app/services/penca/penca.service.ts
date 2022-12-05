@@ -29,7 +29,7 @@ export class PencaService {
     return this.http.get<Penca[]>(apiUrl);
   }
 
-  setCampeonato(pencaId:string|null,campeonatoId:number|null): Observable<Penca> {
+  setCampeonato(campeonatoId:string|null,pencaId:number|null): Observable<Penca> {
     let apiUrl = "https://localhost:7220/api/Penca/SetCampeonato?idC="+campeonatoId+"&idP="+pencaId;
     return this.http.put<Penca>(apiUrl, null);
   }

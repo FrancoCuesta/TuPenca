@@ -10,12 +10,6 @@
         <ng-template #elseBlock>
           <app-iniciouser></app-iniciouser>
         </ng-template>
-        <!--select class="form-select" aria-label="Default select example" id="menuAdmin" onselect="navegate()">
-          <option value="equipo">Equipo</option>
-          <option value="partido">Partido</option>
-          <option value="campeonato">Campeonato</option>
-          <option value="pencapublica">Penca</option>
-        </select-->
       </div>
       <div>
         <button (click)="logout()" style="padding: 5px; margin: 5px;" class=" btn btn-secundary">
@@ -34,7 +28,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <div>
-        <a class="btn btn-secondary" type="button" [routerLink]="'/inicio'">
+        <a class="btn btn-secondary" type="button" [routerLink]="'/'">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
             viewBox="0 0 16 16">
             <path fill-rule="evenodd"

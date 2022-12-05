@@ -29,6 +29,7 @@ export class PencaprivadaComponent {
         codigo: '0',
         user_Penca: [],
         campeonatoId: '0',
+        activa: true,
       }
     }
   }

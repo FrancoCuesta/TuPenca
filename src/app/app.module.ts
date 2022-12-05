@@ -32,6 +32,9 @@ import { VerCampeonatoComponent } from './component/campeonato/ver-campeonato/ve
 import { VerPencaComponent } from './component/penca/ver-penca/ver-penca.component';
 import { VerPremiosComponent } from './component/premios/ver-premios/ver-premios.component';
 import { PredicsionComponent } from './component/predicsion/predicsion.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { RegusuarioComponent } from './component/regusuario/regusuario.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 @NgModule({
@@ -60,9 +63,12 @@ import { PredicsionComponent } from './component/predicsion/predicsion.component
     VerPencaComponent,
     VerPremiosComponent,
     PredicsionComponent,
+    RegusuarioComponent,
+    FooterComponent,
     
   ],
   imports: [
+    NgxPayPalModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

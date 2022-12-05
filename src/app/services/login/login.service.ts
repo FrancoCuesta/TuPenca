@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Login} from '../../models/login';
 import { from, Observable } from 'rxjs';
+import { Usuario } from 'src/app/models/usuario';
 
 
 @Injectable({
@@ -21,7 +22,7 @@ export class LoginService {
     let ret = this.http.get<returned>(url);
     return ret;
   }
-  register(x:Login){
+  register(x:Usuario){
     let url = 'https://localhost:7220/api/Auth/Register';
     let ret = this.http.post<returned>(url,x);
     return ret;

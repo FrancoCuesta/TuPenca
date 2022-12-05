@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//import { GesUsuarioComponent } from './Componentes/ges-usuario/ges-usuario.component';
 import { LoginComponent } from './component/login/login.component';
 import { InicioComponent } from './component/inicio/inicio/inicio.component';
 import { InicioadminComponent } from './component/inicio/inicioadmin/inicioadmin.component';
@@ -10,7 +9,6 @@ import { PartidoComponent } from './component/partido/partido.component';
 import { CampeonatoComponent } from './component/campeonato/campeonato.component';
 import { PencapublicaComponent } from './component/penca/pencapublica/pencapublica.component';
 import { PencaprivadaComponent } from './component/penca/pencaprivada/pencaprivada.component';
-import { RegusuarioComponent } from './component/regusuario/regusuario.component';
 import { ListarpublicasComponent } from './component/penca/listarpublicas/listarpublicas.component';
 import { ListarprivadasComponent } from './component/penca/listarprivadas/listarprivadas.component';
 import { ListarCampeonatoComponent } from './component/campeonato/listar-campeonato/listar-campeonato.component';
@@ -18,6 +16,7 @@ import { ListarPartidoComponent } from './component/partido/listar-partido/lista
 import { VerCampeonatoComponent } from './component/campeonato/ver-campeonato/ver-campeonato.component';
 import { VerPencaComponent } from './component/penca/ver-penca/ver-penca.component';
 import { PredicsionComponent } from './component/predicsion/predicsion.component';
+import { RegusuarioComponent } from './component/regusuario/regusuario.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},

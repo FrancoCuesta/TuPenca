@@ -1,5 +1,4 @@
-import { isFakeTouchstartFromScreenReader } from '@angular/cdk/a11y';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Campeonato } from 'src/app/models/campeonato';
 import { Partido } from 'src/app/models/partido';
@@ -8,6 +7,8 @@ import { Predicsion } from 'src/app/models/Predicsion';
 import { CampeonatoService } from 'src/app/services/campeonato/campeonato.service';
 import { PartidoService } from 'src/app/services/partido/partido.service';
 import { PencaService } from 'src/app/services/penca/penca.service';
+import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-ver-penca',
@@ -15,12 +16,13 @@ import { PencaService } from 'src/app/services/penca/penca.service';
   styleUrls: ['./ver-penca.component.scss']
 })
 export class VerPencaComponent {
+  public payPalConfig?: IPayPalConfig;
   rol = localStorage.getItem('rol');
   penca!: Penca;
   campeonato: Campeonato[] = [];
   unido!: boolean;
   partidos: Partido[] = [];
-  constructor( private PartidoService:PartidoService ,private PencaService: PencaService, private CampeonatoService: CampeonatoService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private PartidoService:PartidoService ,private PencaService: PencaService, private CampeonatoService: CampeonatoService, private router: Router, private route: ActivatedRoute) { }
 
   VerCampeonato(id: string | null) {
     if (id != null) {
@@ -28,6 +30,7 @@ export class VerPencaComponent {
     }
   }
   ngOnInit(): void {
+    this.initConfig();
     this.route.params.subscribe((params: Params) => {
       this.PencaService.get(params['id']).subscribe({
         next: value => {
@@ -44,7 +47,8 @@ export class VerPencaComponent {
         error: error => console.log(error)
       });
       this.CampeonatoService.listar().subscribe({
-        next: value => this.campeonato = value,
+        next: value => {this.campeonato = value, 
+          localStorage.setItem('total', Number(this.penca.costo_entrada).toString())},
         error: error => console.log(error)
       });
     });
@@ -73,17 +77,79 @@ export class VerPencaComponent {
     location.reload();
   }
   Predicsion(id: string | null) {
+    var DateObj = new Date();
     let x:Predicsion = {
         id : 0,
         golA: 0,
         golB: 0,
-        fecha: "2022-11-28T22:40:29.356Z",
+        fecha:"2022-11-28T22:40:29.356Z",
         partidoid: Number(id),
         pencaid: this.penca.id,
         userId: localStorage.getItem('email')
     }
     this.PartidoService.guardar(x);
     this.router.navigate(['/Prediccion']);
+  }
+
+  private initConfig(): void {
+    this.payPalConfig = {
+    currency: 'USD',
+    clientId: 'sb',
+    createOrderOnClient: (data) => <ICreateOrderRequest>{
+      intent: 'CAPTURE',
+      purchase_units: [
+        {
+          amount: {
+            currency_code: 'USD',
+            value: this.penca.costo_entrada,
+            breakdown: {
+              item_total: {
+                currency_code: 'USD',
+                value: this.penca.costo_entrada
+              }
+            }
+          },
+          items: [
+            {
+              name: 'Enterprise Subscription',
+              quantity: '1',
+              category: 'DIGITAL_GOODS',
+              unit_amount: {
+                currency_code: 'USD',
+                value: this.penca.costo_entrada,
+              },
+            }
+          ]
+        }
+      ]
+    },
+    advanced: {
+      commit: 'true'
+    },
+    style: {
+      color: 'blue',
+      label: 'paypal',
+      layout: 'vertical'
+    },
+    onApprove: (data, actions) => {
+      console.log('onApprove - transaction was approved, but not authorized', data, actions);
+      actions.order.get().then((details: any) => {{
+        console.log('onApprove - you can get full order details inside onApprove: ', details),this.Unirme();
+      }});
+    },
+    onClientAuthorization: (data) => {
+      console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
+    },
+    onCancel: (data, actions) => {
+      console.log('OnCancel', data, actions);
+    },
+    onError: err => {
+      console.log('OnError', err);
+    },
+    onClick: (data, actions) => {
+      console.log('onClick', data, actions);
+    },
+  };
   }
 }
 

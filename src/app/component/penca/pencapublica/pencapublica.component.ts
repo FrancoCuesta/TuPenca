@@ -33,6 +33,7 @@ export class PencapublicaComponent {
         codigo: '0',
         user_Penca: [],
         campeonatoId: '0',
+        activa: true,
       }
       this.PencaService.agregar(x).subscribe({
         next: value => { this.exito("Penca creada con exito"); },

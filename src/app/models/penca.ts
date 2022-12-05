@@ -8,5 +8,6 @@ export interface Penca{
     priada: boolean;
     codigo: string|null;
     user_Penca: [];
-    campeonatoId: string|null;   
+    campeonatoId: string|null;
+    activa: boolean|null;
 }

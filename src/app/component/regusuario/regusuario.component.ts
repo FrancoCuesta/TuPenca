@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {Router} from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-regusuario',
@@ -9,8 +10,7 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./regusuario.component.scss']
 })
 export class RegusuarioComponent {
-
-  formRegusuario = new FormGroup({
+  formregusuario = new FormGroup({
     nombre: new FormControl('',Validators.required),
     apellido: new FormControl('',Validators.required),
     email: new FormControl('',Validators.required),
@@ -18,15 +18,18 @@ export class RegusuarioComponent {
   });
 
   
-  constructor(private router:Router ) { }
+  constructor(private router:Router ,private api:LoginService ) { }
 
   regusuario() {
       let x: Usuario={
-        nombre: this.formRegusuario.controls["nombre"].value,
-        apellido: this.formRegusuario.controls["apellido"].value,
-        email: this.formRegusuario.controls["email"].value,
-        password: this.formRegusuario.controls["password"].value,
+        nombre: this.formregusuario.controls["nombre"].value,
+        apellido: this.formregusuario.controls["apellido"].value,
+        email: this.formregusuario.controls["email"].value,
+        password: this.formregusuario.controls["password"].value,
       }
-      
+      this.api.register(x).subscribe(data => {
+        console.log(data);
+        this.router.navigate(['/login']);
+      });
     }
 }
