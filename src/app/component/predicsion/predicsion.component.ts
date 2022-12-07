@@ -52,7 +52,7 @@ export class PredicsionComponent {
       this.prediccion.golB = Number(this.formPredicsion.controls["golB"].value);
       this.PredicsionService.SetPrediccion(this.prediccion).subscribe({
         next: value => { this.exito("Prediccion creada con exito"); },
-        error: err => { this.error('Error al agregar la prediccion: ') }
+        error: err => { this.error('Error al agregar la prediccion: '+err.Exception) }
       });
     }
   }
@@ -63,7 +63,7 @@ export class PredicsionComponent {
       this.partido.golB = this.formPredicsion.controls["golB"].value;
       this.PartidoService.SetResultado(this.partido).subscribe({
         next: value => { this.exito("Resultado guardado con exito"); },
-        error: err => { this.error('Error al guardar el resultado: ') }
+        error: err => { this.error('Error al guardar el resultado: '+err.Exception) }
       });
     }
   }

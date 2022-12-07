@@ -9,6 +9,7 @@ import { PartidoService } from 'src/app/services/partido/partido.service';
 import { PencaService } from 'src/app/services/penca/penca.service';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { DatePipe } from '@angular/common';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-ver-penca',
@@ -22,6 +23,7 @@ export class VerPencaComponent {
   campeonato: Campeonato[] = [];
   unido!: boolean;
   partidos: Partido[] = [];
+  uauarios: Usuario [] = [];
   constructor(private PartidoService:PartidoService ,private PencaService: PencaService, private CampeonatoService: CampeonatoService, private router: Router, private route: ActivatedRoute) { }
 
   VerCampeonato(id: string | null) {
@@ -42,7 +44,11 @@ export class VerPencaComponent {
           this.PencaService.estasUnido(this.penca.id).subscribe({
             next: value => this.unido = true,
             error: error => this.unido = false
-          });
+          }),
+          this.PencaService.getUsuarios(this.penca.id).subscribe({
+            next: value => this.uauarios = value,
+            error: error => console.log(error)
+          })
         },
         error: error => console.log(error)
       });
@@ -89,6 +95,13 @@ export class VerPencaComponent {
     }
     this.PartidoService.guardar(x);
     this.router.navigate(['/Prediccion']);
+  }
+
+  finalizar() {
+    this.PencaService.finalizar(this.penca.id).subscribe({
+      next: value => console.log(value),
+      error: error => console.log(error)
+    });
   }
 
   private initConfig(): void {
