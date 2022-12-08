@@ -8,8 +8,8 @@ import { CampeonatoService } from 'src/app/services/campeonato/campeonato.servic
 import { PartidoService } from 'src/app/services/partido/partido.service';
 import { PencaService } from 'src/app/services/penca/penca.service';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
-import { DatePipe } from '@angular/common';
 import { Usuario } from 'src/app/models/usuario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ver-penca',
@@ -72,7 +72,9 @@ export class VerPencaComponent {
       next: value => console.log(value),
       error: error => console.log(error)
     });
-    location.reload();
+    setTimeout(function(){
+      location.reload();
+    },3000);
   }
 
   Salir() {
@@ -99,8 +101,8 @@ export class VerPencaComponent {
 
   finalizar() {
     this.PencaService.finalizar(this.penca.id).subscribe({
-      next: value => console.log(value),
-      error: error => console.log(error)
+      next: value => this.exito("La penca ha finalizado"),
+      error: error => this.error("No se pudo finalizar la penca"+error.Exception)
     });
   }
 
@@ -122,17 +124,6 @@ export class VerPencaComponent {
               }
             }
           },
-          items: [
-            {
-              name: 'Enterprise Subscription',
-              quantity: '1',
-              category: 'DIGITAL_GOODS',
-              unit_amount: {
-                currency_code: 'USD',
-                value: this.penca.costo_entrada,
-              },
-            }
-          ]
         }
       ]
     },
@@ -163,6 +154,27 @@ export class VerPencaComponent {
       console.log('onClick', data, actions);
     },
   };
+  }
+  
+  error(x: string): void {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: x,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  exito(x: string): void {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Creado con exito',
+      text: x,
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 }
 

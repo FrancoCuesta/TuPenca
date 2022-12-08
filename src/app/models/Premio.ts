@@ -5,4 +5,5 @@ export interface Premio{
     descripcion : string |null
     monto : number|null
     estado : boolean
+    cuenta : string|null
 }

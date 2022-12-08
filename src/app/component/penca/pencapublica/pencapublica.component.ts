@@ -44,9 +44,11 @@ export class PencapublicaComponent {
 
   error(x: string): void {
     Swal.fire({
+      position: 'top-end',
       icon: 'error',
-      title: 'Oops...',
-      text: x,
+      title: x,
+      showConfirmButton: false,
+      timer: 1500
     })
   }
 

@@ -1,16 +1,70 @@
-<thead style=" border-color: none; background-color: #151d2f ; border-radius: 20px; margin: 0%; padding: 0% ;">
-    <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
-        <td class="tdbase1" style="color:white;">Premios</td>
-        <td class="tdbtn1"></td>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let x of Premio" style="margin-bottom: 20px;">
-        <td style="color: #151d2f;">{{x.descripcion}}</td>
-        <td>
-            <button class="btn btn-secondary" (click)="Cobrar(x.id)">
-                Cobrar
-            </button>
-        </td>
-    </tr>
-</tbody>
+<div *ngIf="token != null then thenBlock"></div>
+<ng-template #thenBlock>
+    <div class="container-fluid">
+        <div>
+            <div *ngIf="rol == 'ADMIN' then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+                <div class="row justify-content-center" style="margin-bottom: 20px;">
+                    <div class="col-11">
+                        <div class="row justify-content-center">
+                            <thead style=" border-color: none; background-color: #151d2f ;">
+                                <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
+                                    <td style="color:white;"> Premios </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let x of PremioA" style="margin-bottom: 20px;">
+                                    <td style="color: #151d2f; margin-bottom: 20px; padding: 5px;"> {{x.cuenta}}
+                                    </td>
+                                    <td style="color: #151d2f; margin-bottom: 20px; padding: 5px;"> Monto Ganado
+                                        {{x.monto}} $</td>
+                                    <td style="margin-bottom: 20px; padding: 5px;"><button class="btn btn-secondary"
+                                            (click)="eliminar(x.id)"> Eliminar </button></td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #elseBlock>
+                <div class="row justify-content-center" style="margin-bottom: 20px;">
+                    <div class="col-11">
+                        <div class="row justify-content-center">
+                            <thead style=" border-color: none; background-color: #151d2f ;">
+                                <tr class="tabla" style="margin-bottom: 20px; border-color: none;">
+                                    <td style="color:white;"> Premios </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let x of PremioU" style="margin-bottom: 20px;">
+                                    <td style="color: #151d2f; margin-bottom: 20px; padding: 5px;">
+                                        {{x.descripcion}} </td>
+                                    <td style="color: #151d2f; margin-bottom: 20px; padding: 5px;"> Usted a ganado
+                                        {{x.monto}} $</td>
+                                    <td style="margin-bottom: 20px; padding: 5px;"><button class="btn btn-secondary"
+                                            (click)="seleccionar(x.id)"> Selecsionar </button></td>
+                                </tr>
+                            </tbody>
+                            <br>
+                            <div class="justify-content-center" style="margin-bottom: 20px;">
+                                <form [formGroup]="Cuenta" (submit)="Cobrar()">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="nombre">Cuenta en la que lo desea
+                                            cobrar</label>
+                                        <input type="text" id="nombre" class="form-control" formControlName="nombre" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Cobrar
+                                        Penca</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</ng-template>
